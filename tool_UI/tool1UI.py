@@ -1,5 +1,5 @@
-from tool import tool1_fullcompare
-from toolUI.toolui import *
+from tool_uni import tool1_fullcompare
+from tool_UI.toolui import *
 
 def tool1(root):
     root.iconify()

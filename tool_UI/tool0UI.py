@@ -1,5 +1,5 @@
-from tool import tool0_splitSDF
-from toolUI.toolui import *
+from tool_uni import tool0_splitSDF
+from tool_UI.toolui import *
 
 
 def tool0(root):

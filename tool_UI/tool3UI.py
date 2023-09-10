@@ -1,18 +1,18 @@
-from tool import tool4_filter2
-from toolUI.toolui import *
+from tool_uni import tool3_filter
+from tool_UI.toolui import *
 
 
 
-def tool4(root):
+def tool3(root):
     root.iconify()
     new_window = tk.Toplevel(root)
-    new_window.title("批量构建蛋白文件--红黄白上色")
+    new_window.title("批量构建蛋白文件")
     new_window.geometry("800x600")
 
     button1 = tk.Button(new_window, text="返回主窗口",
                         command=lambda x=new_window: go_back(x, root))
     button1.grid(row=0, column=0)
-    label1 = tk.Label(new_window, text="批量构建蛋白文件--红黄白上色")
+    label1 = tk.Label(new_window, text="批量构建蛋白文件")
     label1.grid(row=0, column=1)
 
     # 选择数据库
@@ -67,18 +67,10 @@ def tool4(root):
     text9.pack()
     scbar.config(command=text9.yview)
 
-    # # 滚动条
-    # sb = tk.Scrollbar(new_window)
-    # sb.grid(row=6, column=2, sticky=tk.N+tk.S+tk.W)
-    # # 状态说明栏
-    # text9 = tk.Text(new_window, yscrollcommand=sb.set, width=40, height=20)
-    # text9.grid(row=6, column=1, padx=10, pady=10)
-    # sb.config(command=text9.yview)
-
     # 开始按钮
     button4 = tk.Button(new_window, text="开始",
                         command=lambda dataset_url=entry2, input_url=entry3, save_url=entry4, save_filename=entry5, text=text9:
-                        tool4_filter2.tool5_main(dataset_url, input_url, save_url, save_filename, text, var))
+                        tool3_filter.too4_main(dataset_url, input_url, save_url, save_filename, text, var))
     button4.grid(row=5, column=0, padx=10, pady=10)
 
 
@@ -88,6 +80,6 @@ if __name__ == '__main__':
     root.geometry("700x300")
 
 
-    tool4(root)
+    tool3(root)
 
     root.mainloop()
