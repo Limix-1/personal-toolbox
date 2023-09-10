@@ -1,6 +1,6 @@
 from tool_uni import tool2_crawler
-from tool_UI.toolui import *
-
+from tool_UI import tool_ui
+import tkinter as tk
 
 
 def tool2(root):
@@ -10,7 +10,7 @@ def tool2(root):
     new_window.geometry("800x600")
 
     button1 = tk.Button(new_window, text="返回主窗口",
-                        command=lambda x=new_window: go_back(x, root))
+                        command=lambda x=new_window: tool_ui.go_back(x, root))
     button1.grid(row=0, column=0)
     label1 = tk.Label(new_window, text="批量构建蛋白文件")
     label1.grid(row=0, column=1)
@@ -21,7 +21,7 @@ def tool2(root):
     entry2 = tk.Entry(new_window, width=40)
     entry2.grid(row=1, column=1, padx=10, pady=5)
     button2 = tk.Button(new_window, text="选择文件",
-                        command=lambda x=entry2: open_file_dialog(x, var))
+                        command=lambda x=entry2: tool_ui.open_file_dialog(x, var))
     button2.grid(row=1, column=2)
 
     # 选择保存文件夹
@@ -30,7 +30,7 @@ def tool2(root):
     entry3 = tk.Entry(new_window, width=40)
     entry3.grid(row=2, column=1, padx=10, pady=5)
     button3 = tk.Button(new_window, text="选择文件夹",
-                        command=lambda x=entry3: open_directory_dialog(x, var))
+                        command=lambda x=entry3: tool_ui.open_directory_dialog(x, var))
     button3.grid(row=2, column=2)
 
     # headers, base_url, tool_url, set_data显示
@@ -62,7 +62,6 @@ def tool2(root):
     entry8 = tk.Entry(new_window, width=40, textvariable=v8, state="readonly")
     entry8.grid(row=7, column=1, padx=10, pady=5)
 
-
     # 设置进度变量
     var = tk.StringVar()
     var.set('000')
@@ -72,7 +71,6 @@ def tool2(root):
     # 状态说明栏
     text9 = tk.Text(new_window, width=40, height=20)
     text9.grid(row=9, column=1, padx=10, pady=10)
-
 
     # 开始按钮
     button4 = tk.Button(new_window, text="开始",
@@ -85,7 +83,6 @@ if __name__ == '__main__':
     root = tk.Tk()
     root.title("测试")
     root.geometry("700x300")
-
 
     tool2(root)
 

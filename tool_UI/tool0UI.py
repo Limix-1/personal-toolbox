@@ -1,5 +1,6 @@
 from tool_uni import tool0_splitSDF
-from tool_UI.toolui import *
+from tool_UI import tool_ui
+import tkinter as tk
 
 
 def tool0(root):
@@ -9,7 +10,7 @@ def tool0(root):
     new_window.geometry("800x600")
 
     button1 = tk.Button(new_window, text="返回主窗口",
-                        command=lambda x=new_window: go_back(x, root))
+                        command=lambda x=new_window: tool_ui.go_back(x, root))
     button1.grid(row=0, column=0)
 
     label1 = tk.Label(new_window, text="SDF切分工具")
@@ -26,7 +27,7 @@ def tool0(root):
     entry_file_name2.grid(row=1, column=1, padx=10, pady=10)
 
     button2 = tk.Button(new_window, text="选择文件",
-                        command=lambda x=entry_file_name2: open_file_dialog(x, var))
+                        command=lambda x=entry_file_name2: tool_ui.open_file_dialog(x, var))
     button2.grid(row=1, column=2)
 
     # 选择保存文件夹
@@ -37,7 +38,7 @@ def tool0(root):
     entry_file_name3.grid(row=2, column=1, padx=10, pady=10)
 
     button3 = tk.Button(new_window, text="选择文件夹",
-                        command=lambda x=entry_file_name3: open_directory_dialog(x, var))
+                        command=lambda x=entry_file_name3: tool_ui.open_directory_dialog(x, var))
     button3.grid(row=2, column=2)
 
     button4 = tk.Button(new_window, text="开始",
@@ -47,5 +48,3 @@ def tool0(root):
 
     label4 = tk.Label(new_window, textvariable=var)
     label4.grid(row=3, column=2, padx=10, pady=10)
-
-
