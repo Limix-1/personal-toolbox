@@ -6,13 +6,13 @@ import tkinter as tk
 def tool3(root):
     root.iconify()
     new_window = tk.Toplevel(root)
-    new_window.title("批量构建蛋白文件")
+    new_window.title("氨基酸检索工具")
     new_window.geometry("800x600")
 
     button1 = tk.Button(new_window, text="返回主窗口",
                         command=lambda x=new_window: tool_ui.go_back(x, root))
     button1.grid(row=0, column=0)
-    label1 = tk.Label(new_window, text="批量构建蛋白文件")
+    label1 = tk.Label(new_window, text="氨基酸检索工具")
     label1.grid(row=0, column=1)
 
     # 选择数据库
